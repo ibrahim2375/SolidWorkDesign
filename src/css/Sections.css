@@ -1,0 +1,101 @@
+@import url('./normalization.css');
+@import url('./variables.css');
+section {
+    height :100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+section .content {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items:center;
+}
+section .content .image {
+    width: 80%;
+    /* background-color:aqua; */
+    overflow: hidden;
+}
+section .content  img {
+    width: 100%;
+    object-fit: contain;
+    transition: all 0.5s ease-in;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -ms-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+}
+section .content img:hover {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+section .content .section-data {
+    color: #fff;
+    z-index: 1000;
+    position: absolute;
+    left: 5%;
+    padding: 50px ;
+    max-width: 300px ;
+    background-color: var(--bg-color);
+}
+section .content .section-data a{
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+}
+section .content .section-data a::before {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height:2px;
+    background-color:#fff;
+    left: -25px;
+    top: 50%;
+    transform: translate(-0%,-50%);
+    -webkit-transform: translate(-0%,-50%);
+    -moz-transform: translate(-0%,-50%);
+    -ms-transform: translate(-0%,-50%);
+    -o-transform: translate(-0%,-50%);
+}
+section .content .section-data a:hover{
+ letter-spacing: 1px;
+}
+section .content .section-data a:hover::before {
+        width: 25px;
+}
+
+@media (max-width: 992px) {
+  
+    section .content .image {
+        width: 90%;
+        background-color: aqua;
+        overflow: hidden;
+    }
+
+
+    section .content .section-data {
+        left: 0%;
+        padding: 40px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    section .content .image {
+        width: 90%;
+        overflow: hidden;
+    }
+    section .content .section-data {
+        position: relative;
+        padding: 10px 50px;
+        max-width: 100%;
+    }
+
+}

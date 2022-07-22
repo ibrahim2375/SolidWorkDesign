@@ -1,0 +1,93 @@
+@import url('./normalization.css');
+@import url('./variables.css');
+.landing {
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    height: 100vh;
+}
+
+.landing .center_text {
+    color: #fff;
+    position: absolute;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+
+.landing .center_text p {
+    padding: 30px;
+    position: relative;
+
+}
+
+.landing .center_text p::after{
+   content: '﹏﹏';
+   font-size: 3rem;
+   position: absolute;
+   color:var(--bg-color);
+   height: 30px;
+   width:100%;
+   top: 150%;
+   left: 150%;
+   transform: translate(-150%,-150%);
+   -webkit-transform: translate(-150%,-150%);
+   -moz-transform: translate(-150%,-150%);
+   -ms-transform: translate(-150%,-150%);
+   -o-transform: translate(-150%,-150%);
+}
+.landing .carousel{
+    transition: all 0.5s ease-in;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -ms-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+}
+.landing .carousel 
+.carousel-inner  .carousel-item img {
+    object-fit:  cover;
+}
+.landing .carousel-inner .carousel-item {
+    background-image:url('../images/sw2.jpg');
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+}
+@media (max-width: 992px) {
+
+    .landing .center_text p {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .landing .center_text p::after {
+        font-size: 2rem; 
+    }
+
+}
+
+@media (max-width: 768px) {
+    .landing .center_text {
+          width: 100%;
+        }
+    .landing .center_text p {
+            padding: 0px;
+            /* width: 100%; */
+        }
+    
+        .landing .center_text p::after {
+            font-size: 2rem;
+        }
+}

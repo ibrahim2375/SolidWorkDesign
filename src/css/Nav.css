@@ -1,0 +1,149 @@
+@import url('./variables.css');
+nav {
+    background-color: transparent;
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:  80px 20px;
+    z-index: 6000;
+   
+}
+ .list-bar {
+    display: none;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    z-index: 4000;
+}
+nav > ul {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin: 0 ;
+    padding:0;
+    color: #fff;
+}
+
+nav .btn-contact{
+    position: absolute;
+    right: 10px;
+    width: 150px;
+    color: #fff;
+    padding: 22px 0px;
+    background-color: transparent;
+    border: 1px solid rgb(180, 178, 178);
+    z-index: 0;
+}
+
+nav .btn-contact::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: #333;
+    transition: height .4s linear;
+    -webkit-transition: height .4s linear;
+    -moz-transition: height .4s linear;
+    -ms-transition: height .4s linear;
+    -o-transition: height .4s linear;
+}
+nav .btn-contact:hover::before {
+    height: 100%;
+}
+nav .btn-contact:hover {
+    color: #fff;
+}
+   nav .shape-style2 ,nav .shape-style1 {
+    display: none;
+   }
+
+@media (max-width: 992px) {
+nav .btn-contact {
+        width: 100px;
+        padding: 15px 0px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .icon-list{
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+
+}
+    nav {
+            position: relative;
+            display: flex;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+            z-index: 3000;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 100%;
+            background-color: var(--bg-color);
+            overflow: hidden;
+           
+}
+          .list-bar {
+             display: block;
+         }
+        nav > ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            font-size:32px;
+            z-index: 3500;
+
+        }
+         nav .btn-contact {
+           display: none;
+         }
+         nav .shape-style2 {
+            z-index: 3200;
+            display: block;
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-color: var(--bg-style1);
+            bottom:20%;
+            right: -100px;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+}
+        nav .shape-style1 {
+            z-index: 3200;
+            display: block;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: var(--bg-style0);
+            top: 20%;
+            left: 10px;
+            border-radius: 10% 20% 50% 50%;
+            -webkit-border-radius: 10% 20% 50% 50%;
+            -moz-border-radius: 10% 20% 50% 50%;
+            -ms-border-radius: 10% 20% 50% 50%;
+            -o-border-radius: 10% 20% 50% 50%;
+}
+        
+}

@@ -1,0 +1,54 @@
+@import url('./normalization.css');
+@import url('./variables.css');
+.info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2000;
+    height: 100vh;  
+}
+.info p {
+    word-spacing: 15px;
+    line-height: 3rem;
+    padding: 0px 100px;
+    font-size: 30px;
+    font-weight: 1000;
+    z-index: 3000;
+}
+.info span {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 0;
+    color: rgba(236, 235, 235, 0.4);
+    font-size:500px;
+    
+}
+@media (max-width: 992px) {
+
+    .info p {
+        word-spacing: 5px;
+        line-height: 3rem;
+        padding: 0px 50px;
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+    .info span {
+        font-size: 100px;
+    }
+
+}
+
+@media (max-width: 768px) {
+        .info p {
+                word-spacing: 5px;
+                line-height: 2rem;
+                padding: 0px 20px;
+                font-size: 16px;
+                font-weight: normal;
+            }
+        
+}
