@@ -29,11 +29,11 @@ section .content  img {
     -o-transition: all 0.5s ease-in;
 }
 section .content img:hover {
-  transform: scale(1.2);
-  -webkit-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  -o-transform: scale(1.2);
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
 }
 section .content .section-data {
     color: #fff;
@@ -43,6 +43,38 @@ section .content .section-data {
     padding: 50px ;
     max-width: 300px ;
     background-color: var(--bg-color);
+}
+.section-animation{
+     animation: fadeOut 1.2s ease-in 1 ;
+     -webkit-animation: fadeOut 1.2s ease-in 1 ;
+}
+
+@keyframes fadeOut {
+    0%{
+        opacity: 0;
+        transform: translateY(20%);
+        -webkit-transform: translateY(20%);
+        -moz-transform: translateY(20%);
+        -ms-transform: translateY(20%);
+        -o-transform: translateY(20%);
+}
+    50% {
+        opacity: .5;
+        transform: translateY(10%);
+        -webkit-transform: translateY(10%);
+        -moz-transform: translateY(10%);
+        -ms-transform: translateY(10%);
+        -o-transform: translateY(10%);
+}
+    100% {
+         opacity: 1;
+        transform: translateY(0%);
+        -webkit-transform: translateY(0%);
+        -moz-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+        -o-transform: translateY(0%);
+}
+    
 }
 section .content .section-data a{
     position: relative;
@@ -74,7 +106,6 @@ section .content .section-data a:hover::before {
   
     section .content .image {
         width: 90%;
-        background-color: aqua;
         overflow: hidden;
     }
 

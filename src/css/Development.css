@@ -1,0 +1,100 @@
+.development-section{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+.development-section .image-content {
+    cursor: pointer;
+    width: 90%;
+    height: 100%;
+}
+.development-section .image-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.development-section  .text-content {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    position: absolute;
+    padding: 40px;
+    background-color:white;
+    width: 300px;
+    height: 300px;
+    transition: all .5s ease-in;
+    -webkit-transition: all .5s ease-in;
+    -moz-transition: all .5s ease-in;
+    -ms-transition: all .5s ease-in;
+    -o-transition: all .5s ease-in;
+}
+.development-section .text-content .txt {
+    padding: 10px 0;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+}
+.development-section .text-content .txt p{
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+   
+}
+.development-section:hover .image-content + .text-content .txt p {
+        top: 0%;
+        animation: fadeIn .5s ease-in 1;
+        -webkit-animation: fadeIn .5s ease-in 1;
+}
+.development-section:hover .image-content+.text-content .txt h4 {
+    position: absolute;
+    top: -100%;
+}
+.development-section .image-content:hover + .text-content  {
+    transform: scale(1.04);
+    -webkit-transform: scale(1.04);
+    -moz-transform: scale(1.04);
+    -ms-transform: scale(1.04);
+    -o-transform: scale(1.04);
+}
+/* animation */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20%);
+        -webkit-transform: translateY(20%);
+        -moz-transform: translateY(20%);
+        -ms-transform: translateY(20%);
+        -o-transform: translateY(20%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+        -webkit-transform: translateY(0%);
+        -moz-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+        -o-transform: translateY(0%);
+    }
+}
+
+/* animation */
+
+/* mobile */
+
+
+@media (max-width: 768px) {
+.development-section .image-content {
+        width: 100%;
+    }
+    .development-section .image-content img {
+        display: none;
+    }
+.development-section .text-content {
+    width: 100%;
+    height: 400px;
+}
+}
+/* mobile */

@@ -1,0 +1,103 @@
+@import url('./variables.css');
+@import url('./genralAnimation.css');
+.news{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:400px;
+    height: 400px;
+}
+.news .text-content {
+    position: relative;
+    background-color: var(--bg-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    width: 100%;
+    height: 100%;
+    transition: all .5s ease-in;
+    -webkit-transition: all .5s ease-in;
+    -moz-transition: all .5s ease-in;
+    -ms-transition: all .5s ease-in;
+    -o-transition: all .5s ease-in;
+}
+
+.news  .text-content .txt {
+    color: #fff;
+    padding: 10px 0;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+}
+.news .text-content .news-footer {
+   display: flex;
+   color: white;
+   justify-content:space-between;
+}
+.news .text-content .news-footer .news-arrow{
+    animation: move .6s linear infinite alternate-reverse;
+    -webkit-animation: move .6s linear infinite alternate-reverse;
+}
+@keyframes move {
+    0% {
+        transform: translateX(0px);
+        -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        -o-transform: translateX(0px);
+}
+    100% {
+        transform: translateX(10px);
+        -webkit-transform: translateX(10px);
+        -moz-transform: translateX(10px);
+        -ms-transform: translateX(10px);
+        -o-transform: translateX(10px);
+    }
+    
+}
+.news .text-content .txt p {
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+
+}
+
+.text-content:hover >  .txt p {
+    top: 0%;
+    animation: fadeIn .5s ease-in 1;
+    -webkit-animation: fadeIn .5s ease-in 1;
+}
+
+.text-content:hover > .txt span {
+    position: absolute;
+    top: -100%;
+}
+
+.text-content:hover {
+    transform: scale(1.04);
+    -webkit-transform: scale(1.04);
+    -moz-transform: scale(1.04);
+    -ms-transform: scale(1.04);
+    -o-transform: scale(1.04);
+}
+
+/* animation */
+
+
+
+/* animation */
+
+
+@media (max-width: 768px) {
+    .news {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+    
+        
+}

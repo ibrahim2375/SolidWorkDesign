@@ -47,7 +47,7 @@ nav .btn-contact::before {
     right: 0;
     bottom: 0;
     z-index: -1;
-    background-color: #333;
+    background-color: var(--bg-color);
     transition: height .4s linear;
     -webkit-transition: height .4s linear;
     -moz-transition: height .4s linear;
@@ -64,6 +64,14 @@ nav .btn-contact:hover {
     display: none;
    }
 
+    .icon-list {
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+
+    }
 @media (max-width: 992px) {
 nav .btn-contact {
         width: 100px;
@@ -73,14 +81,7 @@ nav .btn-contact {
 }
 
 @media (max-width: 768px) {
-    .icon-list{
-        transform: rotate(180deg);
-        -webkit-transform: rotate(180deg);
-        -moz-transform: rotate(180deg);
-        -ms-transform: rotate(180deg);
-        -o-transform: rotate(180deg);
 
-}
     nav {
             position: relative;
             display: flex;

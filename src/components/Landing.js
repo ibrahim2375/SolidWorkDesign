@@ -1,9 +1,6 @@
 import React, { createRef, useState } from 'react'
 // css
 import '../css/Landing.css'
-// import Img1 from '../images/sw1.jpg'
-// import Img2 from '../images/sw2.jpg'
-// import Img3 from '../images/sw3.jpg'
 //packages
 // import Tilt from 'react-vanilla-tilt'
 function Landing({ opacity }) {

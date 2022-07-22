@@ -9,7 +9,7 @@ aside {
      flex-direction: column;
      justify-content:space-around;
      align-items: center;
-    z-index: 2000;
+     z-index: 5000;
 }
 aside h5 {
     transform: rotate(-90deg);

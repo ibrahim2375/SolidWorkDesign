@@ -59,7 +59,7 @@
     object-fit:  cover;
 }
 .landing .carousel-inner .carousel-item {
-    background-image:url('../images/sw2.jpg');
+    background-image:url('../images/Home2.jpg');
     display: block;
     width: 100%;
     height: 100%;
@@ -84,7 +84,6 @@
         }
     .landing .center_text p {
             padding: 0px;
-            /* width: 100%; */
         }
     
         .landing .center_text p::after {
