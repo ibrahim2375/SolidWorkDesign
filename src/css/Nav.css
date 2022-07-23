@@ -26,7 +26,12 @@ nav > ul {
     padding:0;
     color: #fff;
 }
-
+nav ul li:hover .link{
+    border-bottom: 1px solid var(--bg-color);
+}
+nav ul li .link{
+    text-decoration: none;
+}
 nav .btn-contact{
     position: absolute;
     right: 10px;

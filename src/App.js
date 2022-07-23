@@ -3,16 +3,14 @@ import React, { createContext, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 //components
-import Nav from './components/Nav'
-import Landing from './components/Landing'
-import SideBar from './components/SideBar'
-// import Info from './components/Info'
-import Main from './components/Main'
-import Links from './components/Links'
-import Footer from './components/Footer'
+
+
+import Home from './Home';
+import Works from './Works';
 //css
 import './css/App.css';
-
+//router
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 export const themeContext = createContext();
 function App() {
     //color of body theme
@@ -48,21 +46,21 @@ function App() {
 
     }
     //change theme
+
     return (
-        <themeContext.Provider value={{ bg, mainColor, spanState, stateOFthemeChange }}>
-            <div className="App">
-                <header >
-                    <div className="container">
-                        <Nav />
-                    </div>
-                    <Landing opacity={stateOFthemeChange ? '0' : '1'} />
-                </header>
-                <SideBar />
-                <Links />
-            </div>
-            <Main />
-            <Footer />
-        </themeContext.Provider>
+        <Router>
+            <themeContext.Provider value={{ bg, mainColor, spanState, stateOFthemeChange }}>
+                <div className="App">
+                    <Routes >
+                        <Route exact path='/' element={<Home />}>
+                        </Route>
+                        <Route exact path='/works' element={<Works />}>
+                        </Route>
+                    </Routes>
+                    {/* <Footer /> */}
+                </div>
+            </themeContext.Provider>
+        </Router>
     );
 }
 
