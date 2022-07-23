@@ -10,7 +10,7 @@ position: relative;
  }
 /* shapes */
 .WorksPosts .circle-shape {
-    position: absolute;
+    position: fixed;
     opacity: .3;
     top: 0%;
     right: 0%;
@@ -25,7 +25,7 @@ position: relative;
     z-index: -1;
 }
 .WorksPosts .circle-shape1 {
-    position: absolute;
+    position: fixed;
     opacity: .3;
     top: 0%;
     left: 0%;
