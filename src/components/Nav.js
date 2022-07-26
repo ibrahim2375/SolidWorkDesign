@@ -88,21 +88,26 @@ function Nav() {
             <div className="list-bar" onClick={toggleNav}>
                 <Icon sx={{ color: IconColor, fontSize: '30px' }} className="icon-list" />
             </div>
-            <nav style={{ display: navState }}>
+            <nav style={{ display: navState }} className="navBar">
                 <ul style={{ color: navColor }}>
                     <li><a className='link' href="/" style={{ color: navColor }}>Home</a></li>
                     <li><a className='link' href="/works" style={{ color: navColor }}>Works</a></li>
+                    <li><a className='link' href="/about" style={{ color: navColor }}>About</a></li>
                     {
-                        userState === true ? <li><a className='link' href="/works/create" style={{ color: navColor }}>CreatePost</a></li> : ''
+                        userState === true ? (
+                            <>
+                                <li><a className='link' href="/works/create" style={{ color: navColor }}>CreatePost</a></li>
+                                <li><a className='link' href="/works/manage" style={{ color: navColor }}>My Posts</a></li>
+                            </>
+                        ) : null
                     }
 
-                    <li><a className='link' href="/about" style={{ color: navColor }}>About</a></li>
                 </ul>
                 <div className="nav-right">
                     {
                         userState === true ? (
                             <>
-                                <h3 style={{ color: navColor }}>{UserName ?? null}</h3>
+                                <h5 className="text-center mb-0" style={{ color: navColor }}>{UserName ?? null}</h5>
                                 <button className="btn-contact" style={{ color: navColor }} onClick={logOut}>LogOut</button>
                             </>
                         ) : <Link to="/login" className="btn-contact" style={{ color: navColor }}>LogIn</Link>

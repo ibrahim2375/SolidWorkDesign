@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from '../Home'
 import Works from '../Works'
 import CreatePost from '../CreatePost'
+import ManagePosts from '../ManagePosts'
 import SinglePost from '../components/SinglePost'
 import Login from '../components/Login/Login'
 import Register from '../components/Register/Register'
@@ -29,6 +30,12 @@ function RouterComponent({ mainColor, spanState, stateOFthemeChange, classAnimat
                     <Route exact path='/works/create' element={
                         <ProtectForUserPages IsloggedIn={userState} >
                             <CreatePost />
+                        </ProtectForUserPages>
+                    }>
+                    </Route>
+                    <Route exact path='/works/manage' element={
+                        <ProtectForUserPages IsloggedIn={userState} >
+                            <ManagePosts />
                         </ProtectForUserPages>
                     }>
                     </Route>

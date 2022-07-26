@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 //components
 import Links from './components/Links'
@@ -9,10 +9,8 @@ import './css/Create.css';
 import { ToastContainer, toast } from 'react-toastify'
 // Import toastify css file
 import 'react-toastify/dist/ReactToastify.css';
-//context  
-// import { Context } from './App'
+
 function CreatePost() {
-    // const { userData } = useContext(Context);
     return (
         <div className="create">
             <div className="container">
