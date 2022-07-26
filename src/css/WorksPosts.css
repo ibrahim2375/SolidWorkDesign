@@ -1,5 +1,5 @@
 @import url('./variables.css');
-@import url('./genralAnimation.css');
+@import url('./revealAnimation.css');
 .WorksPosts{
 position: relative;
 /* overflow: hidden; */
@@ -50,13 +50,16 @@ position: relative;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 40px;
+    
 }
 /* posts */
 /* post */
 .WorksPosts .posts .post {
+ overflow: hidden;
  position: relative;
  width: 350px;
  height: 500px;
+transition-duration: 500ms;
 }
 .WorksPosts .posts .post::before {
  content: "";
@@ -68,10 +71,12 @@ position: relative;
  background-color: var(--bg-color);
  z-index: 100;
  display: none;
+
 }
 /* action */
 .WorksPosts .posts .post:hover::before {
     display: block;
+
 }
 .WorksPosts .post:hover {
     transform: scale(1.04);
@@ -95,16 +100,18 @@ position: relative;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.22);
     z-index: 99;
 }
 .WorksPosts .posts .post img {
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     z-index: 0;
 }
 .WorksPosts .posts .post  .post-info {

@@ -1,0 +1,59 @@
+@import url('../variables.css');
+@import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Poppins:ital,wght@1,100&display=swap');
+.register-link{
+    color: var(--bg-color);
+}
+.span-txt ,h3 {
+font-family: 'Hachi Maru Pop';
+
+color: var(--bg-color);
+}
+
+.close-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+.close-icon .icon{
+    color: var(--bg-color);
+    font-size:40px;
+}
+.btn-login {
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    color: var(--bg-color);
+    padding: 10px 0px;
+    background-color: transparent;
+    border: 1px solid rgb(180, 178, 178);
+    z-index: 0;
+}
+
+.btn-login::before {
+    content: "";
+    position: absolute;
+    height: 0%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: var(--bg-color);
+    transition: height .4s linear;
+    -webkit-transition: height .4s linear;
+    -moz-transition: height .4s linear;
+    -ms-transition: height .4s linear;
+    -o-transition: height .4s linear;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.btn-login:hover::before {
+    height: 100%;
+}
+
+.btn-login:hover {
+    color: #fff;
+}

@@ -6,10 +6,10 @@ import SideBar from './components/SideBar'
 import Footer from './components/Footer'
 // import Info from './components/Info'
 import Links from './components/Links'
-import { themeContext } from './App';
+import { Context } from './Router/Router';
 
 function Home() {
-    const { stateOFthemeChange } = useContext(themeContext);
+    const { stateOFthemeChange } = useContext(Context);
 
     return (
         <>

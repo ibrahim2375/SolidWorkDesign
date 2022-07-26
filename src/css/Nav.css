@@ -7,6 +7,7 @@ nav {
     align-items: center;
     padding:  80px 20px;
     z-index: 6000;
+    gap: 50px;
    
 }
  .list-bar {
@@ -32,12 +33,20 @@ nav ul li:hover .link{
 nav ul li .link{
     text-decoration: none;
 }
-nav .btn-contact{
+nav .nav-right{
+    display: flex;
     position: absolute;
+    justify-content:center;
+    align-items:center;
     right: 10px;
-    width: 150px;
+    gap: 30px;
+}
+nav .btn-contact{
+    position: relative;
+    text-decoration: none;
+    text-align: center;
     color: #fff;
-    padding: 22px 0px;
+    padding: 15px 40px;
     background-color: transparent;
     border: 1px solid rgb(180, 178, 178);
     z-index: 0;
@@ -90,10 +99,10 @@ nav .btn-contact {
     nav {
             position: relative;
             display: flex;
-            display: flex;
             justify-content: center;
             align-items: center;
-            padding: 50px 20px;
+            flex-direction: column;
+            padding: 30px 20px;
             z-index: 3000;
             position: absolute;
             left: 0;
@@ -118,9 +127,12 @@ nav .btn-contact {
             z-index: 3500;
 
         }
-         nav .btn-contact {
-           display: none;
-         }
+ 
+        nav .nav-right {
+            position: relative;
+            flex-direction: column;
+
+        }
          nav .shape-style2 {
             z-index: 3200;
             display: block;

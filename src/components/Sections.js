@@ -1,30 +1,21 @@
-import React, { useState } from 'react'
-//images 
-import Image from '../images/sw3.jpg'
+import React from 'react';
 //css 
 import '../css/Sections.css'
-function Sections() {
-    const [classAnimation, setclassAnimation] = useState('');
-    window.addEventListener('scroll', () => {
-        // console.log(window.scrollY)
-        if (window.scrollY >= 1100) {
-            setclassAnimation('section-animation');
-        }
-    })
+function Sections({ img, description, title, fadeAnimation }) {
+
     return (
-        <section className={classAnimation}>
+        <section>
             <div className="content">
                 <div className="image">
-                    <img src={Image} alt="" />
+                    <img src={img} alt="" />
                 </div>
                 <div className={`section-data`}>
-                    <h1 className={classAnimation}>Well Good</h1>
-                    <p className={classAnimation}>Preventative digital mental health care for businesses</p>
-                    <a className={classAnimation} href="/">View Project</a>
+                    <h1 >{title}</h1>
+                    <p>{description}</p>
+                    <a href="/">View Work</a>
                 </div>
-
             </div>
         </section>
     )
 }
-export default Sections
+export default React.memo(Sections)

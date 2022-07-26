@@ -1,18 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 //css
 import '../css/News.css'
 //icons  
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import { Context } from '../Router/Router';
+
 function News() {
-    const [classAnimation, setclassAnimation] = useState('');
-    window.addEventListener('scroll', () => {
-        // console.log(window.scrollY)
-        if (window.scrollY >= 5500) {
-            setclassAnimation('section-animation');
-        }
-    })
+    const { classAnimation } = useContext(Context);
     return (
-        <div className={`news ${classAnimation}`}>
+        <div className={`news ${classAnimation} reveal`}>
             <div className="text-content">
                 <div className="txt">
                     <span>Lorem, ipsum dolor sit ametumquam pariatur architecto magni </span>
@@ -24,13 +20,14 @@ function News() {
                 </div>
                 <div className="news-footer">
                     <span>development</span>
-                    <span className="news-arrow"><ArrowRightAltIcon  /></span>
+                    <span className="news-arrow"><ArrowRightAltIcon /></span>
                 </div>
             </div>
 
         </div>
 
+
     )
 }
 
-export default News
+export default React.memo(News)

@@ -17,4 +17,4 @@ function Note() {
     )
 }
 
-export default Note
+export default React.memo(Note);

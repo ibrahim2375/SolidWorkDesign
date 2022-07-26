@@ -1,0 +1,90 @@
+  @import url('../variables.css');
+  .background-radial-gradient {
+      background-color: hsl(218, 41%, 15%);
+      background-image: radial-gradient(650px circle at 0% 0%,
+              hsl(218, 41%, 35%) 15%,
+              hsl(218, 41%, 30%) 35%,
+              hsl(218, 41%, 20%) 75%,
+              hsl(218, 41%, 19%) 80%,
+              transparent 100%),
+          radial-gradient(1250px circle at 100% 100%,
+              hsl(218, 41%, 45%) 15%,
+              hsl(218, 41%, 30%) 35%,
+              hsl(218, 41%, 20%) 75%,
+              hsl(218, 41%, 19%) 80%,
+              transparent 100%);
+  }
+
+  #radius-shape-1 {
+      height: 220px;
+      width: 220px;
+      top: -60px;
+      left: -130px;
+      background: radial-gradient(#44006b, #ad1fff);
+      overflow: hidden;
+  }
+
+  #radius-shape-2 {
+      border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+      bottom: -60px;
+      right: -110px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(#44006b, #ad1fff);
+      overflow: hidden;
+  }
+
+  .bg-glass {
+      background-color: hsla(0, 0%, 100%, 0.9) !important;
+      backdrop-filter: saturate(200%) blur(25px);
+  }
+  .span-register-title{
+    color: var(--bg-color);
+    font-family: 'Hachi Maru Pop';
+  }
+/* btn style   */
+.btn-register {
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    color: var(--bg-color);
+    padding: 10px 0px;
+    background-color: transparent;
+    border: 1px solid rgb(180, 178, 178);
+    z-index: 0;
+}
+
+.btn-register::before {
+    content: "";
+    position: absolute;
+    height: 0%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: var(--bg-color);
+    transition: height .4s linear;
+    -webkit-transition: height .4s linear;
+    -moz-transition: height .4s linear;
+    -ms-transition: height .4s linear;
+    -o-transition: height .4s linear;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.btn-register:hover::before {
+    height: 100%;
+}
+
+.btn-register:hover {
+    color: #fff;
+}
+  /* ///
+  
+  */
+  html{
+    height: 100vh;
+  }

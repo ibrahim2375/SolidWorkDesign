@@ -3,7 +3,8 @@ import React, { useContext, useState } from 'react'
 //css  
 import '../css/Links.css'
 //import context  
-import { themeContext } from '../App';
+import { Context } from '../Router/Router';
+
 function Links() {
 
     const [linksState, setlinksState] = useState(false);
@@ -23,7 +24,7 @@ function Links() {
     )
 }
 const Ulinks = () => {
-    const { stateOFthemeChange } = useContext(themeContext);
+    const { stateOFthemeChange } = useContext(Context);
     return (
         <ul style={{ display: stateOFthemeChange ? 'block' : 'none' }} className="links_right">
             <li><a href="/">Home</a></li>
@@ -33,4 +34,4 @@ const Ulinks = () => {
     )
 }
 
-export default Links
+export default React.memo(Links)

@@ -1,24 +1,33 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 //components
 import Info from './Info'
 import Sections from './Sections'
 import Note from './Note'
 import DevelopmentSection from './DevelopmentSection'
 import News from './News'
+import Axios from 'axios'
 //images 
-import Image1 from '../images/sw2.jpg'
 import Image2 from '../images/sw4.jpg'
 function Main() {
+    const [sectionsData, setsectionsData] = useState([]);
+    useEffect(() => {
+        Axios.get('http://localhost:5000/').then((res) => {
+            setsectionsData(res.data);
+        })
+
+    }, [])
     return (
         <div className="container">
             <Info />
-            <Sections  />
-            <Sections />
-            <Sections />
-            <Sections />
+            {
+                sectionsData.map((section) => {
+                    return <Sections key={section.id} title={section.title} description={section.description} img={section.img} />
+
+                })
+            }
             <Note />
-            <DevelopmentSection Image={Image1} />
-            <div className="d-flex  flex-wrap  w-100 vh-100 " style={{ justifyContent: 'center', gap: '100px' }}>
+            {/* <DevelopmentSection Image={Image1} /> */}
+            <div className="d-flex  flex-wrap  w-100 mt-5" style={{ justifyContent: 'center', gap: '100px' }}>
                 <News />
                 <News />
             </div>
@@ -27,4 +36,4 @@ function Main() {
     )
 }
 
-export default Main
+export default React.memo(Main)

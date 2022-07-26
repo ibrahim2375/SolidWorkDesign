@@ -5,7 +5,7 @@ import '../css/Footer.css'
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 function Footer() {
     return (
-        <footer>
+        <footer className="color-of-sidebar-change">
             <div className="circle-shape"></div>
             <div className="rectangle-shape"></div>
             <div className="footer-content container">
@@ -33,4 +33,4 @@ function Footer() {
     )
 }
 
-export default Footer
+export default React.memo(Footer)

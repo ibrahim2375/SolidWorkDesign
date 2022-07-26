@@ -1,14 +1,15 @@
-import React, { useContext  } from 'react'
+import React, { useContext } from 'react'
 //css 
 import '../css/Info.css'
 //import context      
-import { themeContext } from '../App';
+import { Context } from '../Router/Router';
+
 function Info() {
-    const {  mainColor, spanState } = useContext(themeContext);
+    const { mainColor, spanState } = useContext(Context);
 
     return (
         <div className="info mt-5 container">
-            <span style={{ display: spanState ? 'block' : 'none' }}>hello</span>
+            <span className="spanState" style={{ display: spanState ? 'block' : 'none' }}>hello</span>
             <p style={{ color: mainColor }}>
                 Pick up the phone. Call us. Ask us the difficult questions you don’t have answers to.
                 We’re a digital transformation agency for ambitious organisations. We take ideas and transform them into opportunities,
@@ -20,4 +21,4 @@ function Info() {
     )
 }
 
-export default Info
+export default React.memo(Info)

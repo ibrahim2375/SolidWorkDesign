@@ -1,5 +1,6 @@
 @import url('./normalization.css');
 @import url('./variables.css');
+@import url('./revealAnimation.css');
 .info {
     display: flex;
     justify-content: center;

@@ -16,6 +16,7 @@ function Landing({ opacity }) {
             setYPosition(y);
         }
     }
+
     return (
         <div className="landing" onMouseMove={Animate}>
             <div className='center_text'>
@@ -23,17 +24,11 @@ function Landing({ opacity }) {
                 <h1 className='display-1'> Delivered.</h1>
                 <p className='text-center w-75' >Parallax is a digital consultancy with innovation at its core. We solve complex problems and build leading digital products.</p>
             </div>
-            <div id="carouselExampleSlidesOnly" className="carousel slide w-100 h-100" data-bs-ride="carousel" style={{ opacity: opacity }}>
+            <div id="carouselExampleSlidesOnly" className="carousel  slide w-100 h-100" data-bs-ride="carousel" style={{ opacity: opacity }}>
                 <div className="carousel-inner w-100 h-100">
-                    <div ref={ref} className="carousel-item active w-100 h-100" style={{ backgroundPositionX: xPosition, backgroundPositionY: yPosition }} >
-                        {/* <img src={Img2} className="d-block w-100 h-100" alt="..."  /> */}
+                    <div ref={ref} className="carousel-item active w-100 h-100 " style={{ backgroundPositionX: xPosition, backgroundPositionY: yPosition }} >
                     </div>
-                    {/* <div className="carousel-item w-100 h-100">
-                        <img src={Img1} className="d-block w-100 h-100" alt="..." />
-                    </div>
-                    <div className="carousel-item w-100 h-100">
-                        <img src={Img3} className="d-block w-100 h-100" alt="..." />
-                    </div> */}
+                
                 </div>
             </div>
         </div>
@@ -41,4 +36,4 @@ function Landing({ opacity }) {
     )
 }
 
-export default Landing
+export default React.memo(Landing)

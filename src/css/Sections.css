@@ -1,5 +1,6 @@
 @import url('./normalization.css');
 @import url('./variables.css');
+@import url('./revealAnimation.css');
 section {
     height :100vh;
     display:flex;
@@ -43,39 +44,13 @@ section .content .section-data {
     padding: 50px ;
     max-width: 300px ;
     background-color: var(--bg-color);
-}
-.section-animation{
-     animation: fadeOut 1.2s ease-in 1 ;
-     -webkit-animation: fadeOut 1.2s ease-in 1 ;
+    transition: all 1.5s ease-in;
+    -webkit-transition: all 1.5s ease-in;
+    -moz-transition: all 1.5s ease-in;
+    -ms-transition: all 1.5s ease-in;
+    -o-transition: all 1.5s ease-in;
 }
 
-@keyframes fadeOut {
-    0%{
-        opacity: 0;
-        transform: translateY(20%);
-        -webkit-transform: translateY(20%);
-        -moz-transform: translateY(20%);
-        -ms-transform: translateY(20%);
-        -o-transform: translateY(20%);
-}
-    50% {
-        opacity: .5;
-        transform: translateY(10%);
-        -webkit-transform: translateY(10%);
-        -moz-transform: translateY(10%);
-        -ms-transform: translateY(10%);
-        -o-transform: translateY(10%);
-}
-    100% {
-         opacity: 1;
-        transform: translateY(0%);
-        -webkit-transform: translateY(0%);
-        -moz-transform: translateY(0%);
-        -ms-transform: translateY(0%);
-        -o-transform: translateY(0%);
-}
-    
-}
 section .content .section-data a{
     position: relative;
     color: #fff;
@@ -103,7 +78,22 @@ section .content .section-data a:hover::before {
 }
 
 @media (max-width: 992px) {
-  
+section {
+        height: 100%;
+        margin-bottom:50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    section .content {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
     section .content .image {
         width: 90%;
         overflow: hidden;

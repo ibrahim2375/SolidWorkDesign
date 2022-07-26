@@ -7,10 +7,10 @@ import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LanguageIcon from '@mui/icons-material/Language';
 //import context      
-import { themeContext } from '../App';
+import { Context } from '../Router/Router';
 function SideBar() {
     const [colorOfSideState, setcolorOfSideState] = useState(false);
-    const { mainColor } = useContext(themeContext);
+    const { mainColor } = useContext(Context);
     useEffect(() => {
         if (window.location.pathname !== '/') {
             setcolorOfSideState(true);
@@ -31,4 +31,4 @@ function SideBar() {
     )
 }
 
-export default SideBar
+export default React.memo(SideBar)
