@@ -11,7 +11,7 @@ import Image2 from '../images/sw4.jpg'
 function Main() {
     const [sectionsData, setsectionsData] = useState([]);
     useEffect(() => {
-        Axios.get('http://localhost:5000/').then((res) => {
+        Axios.get(process.env.REACT_APP_HOME_SECTIONS).then((res) => {
             setsectionsData(res.data);
         })
 

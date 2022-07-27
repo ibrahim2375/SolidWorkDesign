@@ -51,7 +51,7 @@ const Form = () => {
         formdata.append('company', company);
         formdata.append('id', param.id);
         if (title != null && description != null && email != null && website != null && company != null && img != null) {
-            axios.put('http://localhost:5000/post/update', formdata).then((response) => {
+            axios.put(process.env.REACT_APP_UPDATE_WORK, formdata).then((response) => {
                 toast(`${response.data}`, {
                     position: "top-right",
                     autoClose: 2000,
@@ -70,7 +70,7 @@ const Form = () => {
     }
 
     const getPost = () => {
-        axios.get(`http://localhost:5000/edit/${param.id}`).then((response) => {
+        axios.get(`${process.env.REACT_APP_GET_POST}${param.id}`).then((response) => {
             setPostdata(response.data);
             settitle(response.data.title);
             setcompany(response.data.company);

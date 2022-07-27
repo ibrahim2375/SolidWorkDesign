@@ -1,4 +1,5 @@
 @import url('./variables.css');
+@import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Poppins:ital,wght@1,100&display=swap');
 aside {
     position: fixed;
     left: 10px;
@@ -12,7 +13,9 @@ aside {
      align-items: center;
      z-index: 5000;
 }
-aside h5 {
+aside .name-poject-sidebar {
+    font-family: 'Hachi Maru Pop';
+    text-decoration: none;
     transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);

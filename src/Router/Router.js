@@ -3,6 +3,7 @@ import React, { createContext, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //components
 import Home from '../Home'
+import About from '../About'
 import Works from '../Works'
 import EditPosts from '../EditPosts'
 import CreatePost from '../CreatePost'
@@ -28,6 +29,8 @@ function RouterComponent({ mainColor, spanState, stateOFthemeChange, classAnimat
                     <Route exact path='/' element={<Home />}>
                     </Route>
                     <Route exact path='/works' element={<Works />}>
+                    </Route>
+                    <Route exact path='/about' element={<About />}>
                     </Route>
                     <Route exact path='/works/create' element={
                         <ProtectForUserPages IsloggedIn={userState} >

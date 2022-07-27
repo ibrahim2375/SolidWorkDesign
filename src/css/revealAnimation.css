@@ -89,3 +89,28 @@
 }
 
 /* animation of sections */
+
+
+/* about reveal animation */
+.reveal-a {
+    opacity: 0;
+    transform: translateY(100px);
+    -webkit-transform: translateY(100px);
+    -moz-transform: translateY(100px);
+    -ms-transform: translateY(100px);
+    -o-transform: translateY(100px);
+    transition: all 0.8s ease-in;
+    -webkit-transition: all 0.8s ease-in;
+    -moz-transition: all 0.8s ease-in;
+    -ms-transition: all 0.8s ease-in;
+    -o-transition: all 0.8s ease-in;
+}
+
+.reveal-a.reveal-a-animation {
+    opacity: 1;
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -o-transform: translateY(0px);
+}

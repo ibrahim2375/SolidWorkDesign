@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useCallback } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 //css
 import '../css/Nav.css'
 import axios from 'axios'
@@ -7,14 +7,13 @@ import SortIcon from '@mui/icons-material/Sort';
 import CloseIcon from '@mui/icons-material/Close';
 //context  
 import { Context } from '../Router/Router';
-
 //links 
 import { Link } from 'react-router-dom'
 function Nav() {
     const [Icon, setIcon] = useState(SortIcon);
     const [IconColor, setIconColor] = useState('#8b5cdd');
     const [navState, setNavState] = useState('none');
-    const [navColor, setNavColor] = useState('black');
+    // const [navColor, setNavColor] = useState('black');
     const [userState, setuserState] = useState(false);
     const [UserName, setUserName] = useState('');
     const { userData } = useContext(Context);
@@ -36,6 +35,8 @@ function Nav() {
             setNavState('flex');
             setIcon(CloseIcon);
             setIconColor('white');
+            // setNavColor('balck');
+
         }
         //resizeing
         window.addEventListener('resize', () => {
@@ -57,12 +58,18 @@ function Nav() {
                 setIconColor('#8b5cdd');
             }
         })
-        if (window.location.pathname === '/') {
-            setNavColor('white');
-        }
+        // if(window.innerWidth <= 768){
+        //     if (window.location.pathname === '/') {
+        //         setNavColor('white');
+        //     }
+        // }
+        // if (window.location.pathname === '/' || window.innerWidth <= 768) {
+        //     setNavColor('white');
+        // }
+
     }
     const logOut = async () => {
-        await axios.delete('http://localhost:5000/logout').then((res) => {
+        await axios.delete(process.env.REACT_APP_LOGOUT_FROM_APP).then((res) => {
             console.log(res.data)
             // window.location.reload();
             window.location.href = '/';
@@ -89,15 +96,15 @@ function Nav() {
                 <Icon sx={{ color: IconColor, fontSize: '30px' }} className="icon-list" />
             </div>
             <nav style={{ display: navState }} className="navBar">
-                <ul style={{ color: navColor }}>
-                    <li><a className='link' href="/" style={{ color: navColor }}>Home</a></li>
-                    <li><a className='link' href="/works" style={{ color: navColor }}>Works</a></li>
-                    <li><a className='link' href="/about" style={{ color: navColor }}>About</a></li>
+                <ul >
+                    <li><a className='link' href="/" >Home</a></li>
+                    <li><a className='link' href="/works" >Works</a></li>
+                    <li><a className='link' href="/about" >About</a></li>
                     {
                         userState === true ? (
                             <>
-                                <li><a className='link' href="/works/create" style={{ color: navColor }}>CreatePost</a></li>
-                                <li><a className='link' href="/works/manage" style={{ color: navColor }}>My Posts</a></li>
+                                <li><a className='link' href="/works/create" >CreatePost</a></li>
+                                <li><a className='link' href="/works/manage" >My Posts</a></li>
                             </>
                         ) : null
                     }
@@ -107,10 +114,10 @@ function Nav() {
                     {
                         userState === true ? (
                             <>
-                                <h5 className="text-center mb-0" style={{ color: navColor }}>{UserName ?? null}</h5>
-                                <button className="btn-contact" style={{ color: navColor }} onClick={logOut}>LogOut</button>
+                                <h5 className="text-center mb-0" style={{ color: "#8b5cdd" }}>{UserName ?? null}</h5>
+                                <button className="btn-contact" style={{ color: "" }} onClick={logOut}>LogOut</button>
                             </>
-                        ) : <Link to="/login" className="btn-contact" style={{ color: navColor }}>LogIn</Link>
+                        ) : <Link to="/login" className="btn-contact" style={{ color: "" }}>LogIn</Link>
                     }
                 </div>
                 <div className="shape-style1"></div>

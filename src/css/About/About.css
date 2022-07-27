@@ -1,0 +1,223 @@
+.about header{
+    position: relative;
+    overflow:hidden;
+}
+.about .about-head-content {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap:50px;
+    flex-direction:column;
+}
+.about .about-header-txt{
+    padding: 30px;
+    position: relative;
+
+}
+.about .about-header-txt::before {
+    content: '﹏﹏';
+    font-size: 5rem;
+    position: absolute;
+    color: var(--bg-color);
+    height: 30px;
+    width: 100%;
+    top: 100%;
+    left: 150%;
+    transform: translate(-150%, -150%);
+    -webkit-transform: translate(-150%, -150%);
+    -moz-transform: translate(-150%, -150%);
+    -ms-transform: translate(-150%, -150%);
+    -o-transform: translate(-150%, -150%);
+}
+.about .line{
+    position: relative;
+    margin-top: 10rem;
+    width: 200px;
+    height:2px;
+    background-color: var(--bg-color);
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+}
+/* arrow animation */
+.about header .container .about-head-content .arrow{
+    margin-top: 100px;
+    animation: arrow .7s linear  infinite forwards alternate;
+    -webkit-animation: arrow .7s linear  infinite forwards alternate;
+}
+.about header .container .about-head-content .arrow .arrow-icon{
+    color: var(--bg-color);
+}
+@keyframes arrow {
+    to{
+        transform: translateY(20px);
+        -webkit-transform: translateY(20px);
+        -moz-transform: translateY(20px);
+        -ms-transform: translateY(20px);
+        -o-transform: translateY(20px);
+}
+}
+/* arrow animation */
+/* header animation */
+.about header div[class^="shape"]{
+    position: absolute;
+    width: 10px;
+    height:10px;
+    opacity: .6;
+    background-color: var(--bg-style1);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    animation-name: popup;
+    animation-duration:4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    /* animation-direction: alternate; */
+}
+.about header div[class^="shape1"] {
+    top: 40%;
+    left: 60%;
+    /* animation-delay: 3s; */
+}
+.about header div[class^="shape2"] {
+    top: -20%;
+    left: 40%;
+    animation-delay: 1.5s;
+}
+.about header div[class^="shape3"] {
+    top: 10%;
+    left: -10%;
+    animation-delay: 2.5s;
+}
+@keyframes popup {
+      to{
+         width: 800px;
+        height: 800px;
+        opacity: 0;
+      }
+}
+/* header animation */
+.about .about-main-content .about-main-content-img img{
+    object-fit:contain;
+    width:100%;
+    height:100vh;
+}
+.about .about-main-content .about-main-content-txt {
+    height: 50vh;
+}
+.about .about-main-content .about-main-content-txt p{
+    word-spacing: 10px;
+    line-height: 3rem;
+    padding: 0px 100px;
+    font-size: 30px;
+    font-weight: 1000;
+    color: var(--bg-color);
+
+}
+
+/* style sections  */
+.about .about-main-content .about-main-content-section{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    height:100vh;
+}
+
+.about .about-main-content .about-main-content-section .about-main-content-section-details {
+    flex: .5;
+    position: relative;
+    padding: 0 3rem;
+    text-align: center;
+}
+
+.about .about-main-content .about-main-content-section .about-main-content-section-details p{
+    line-height: 2rem;
+}
+.about .about-main-content .about-main-content-section .about-main-content-section-img {
+ flex: .5;
+ position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.about .about-main-content .about-main-content-section .about-main-content-section-img img{
+    position: relative;
+    /* top:  */
+    width: 100%;
+    object-fit: contain;
+
+}
+/* style sections  */
+
+
+/* /team Img */
+.team-img{
+    position: relative;
+    margin-bottom: 200px;
+}
+.team-img::after {
+ content: 'IbraHim abd elrahman ';
+ position:absolute;
+ top: 95%;
+ left: 0;
+ right: 0;
+ width: 100%;
+ height: 100px;
+ background-color: var(--bg-color);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ color:white;
+ font-size: larger;
+ font-weight: bold;
+}
+ /* /team Img */
+@media (max-width: 992px) {
+
+.about .about-main-content .about-main-content-img img {
+        height: 50vh;
+    }
+.about .about-main-content .about-main-content-txt {
+        height: 50vh;
+}
+.about .about-main-content .about-main-content-txt p {
+            word-spacing: 5px;
+            font-size: 20px;
+}
+/* section */
+.about .about-main-content .about-main-content-section {
+    flex-direction: column;
+}
+
+.about .about-main-content .about-main-content-section .about-main-content-section-details {
+    padding:3rem 0;
+}
+
+.about .about-main-content .about-main-content-section .about-main-content-section-details p {
+    line-height: 2rem;
+}
+
+
+
+.about .about-main-content .about-main-content-section .about-main-content-section-img img {
+    position: relative;
+    width: 100%;
+    object-fit: contain;
+
+}
+/* section */
+}
+
+@media (max-width: 768px) {
+.about .about-main-content .about-main-content-txt p {
+        line-height: 2rem;
+        padding: 0px 20px;
+
+}
+
+}

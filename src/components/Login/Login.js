@@ -16,7 +16,7 @@ function Login() {
     axios.defaults.withCredentials = true;
     const Login = async (e) => {
         e.preventDefault();
-        await axios.post('http://localhost:5000/users', {
+        await axios.post(process.env.REACT_APP_LOGIN_TO_CHECK_USER, {
             email: email,
             password: password
         }).then((response) => {
@@ -29,7 +29,7 @@ function Login() {
                 setErrors('');
                 // window.location.reload();
                 // window.location.pathname = '/';
-                  window.location.href = '/';
+                window.location.href = '/';
 
 
             } else {

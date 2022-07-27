@@ -18,7 +18,7 @@ function SideBar() {
     }, []);
     return (
         <aside>
-            <h5 style={{ color: colorOfSideState ? '#8b5cdd' : mainColor }}>Solid Work</h5>
+            <a className="name-poject-sidebar fs-4" href='/' style={{ color: colorOfSideState ? '#8b5cdd' : mainColor }}>Solid Work</a>
             <div className="links">
                 <ul>
                     <li><a href="/"><FacebookOutlinedIcon sx={{ color: colorOfSideState ? '#8b5cdd' : mainColor, fontSize: 'medium' }} /></a></li>

@@ -50,7 +50,7 @@ const Form = () => {
         formdata.append('company', company);
         if (title != null && description != null && email != null && website != null && company != null && img != null) {
             setErrors('success');
-            axios.post('http://localhost:5000/upload', formdata).then((response) => {
+            axios.post(process.env.REACT_APP_CREATE_WORK, formdata).then((response) => {
                 toast("successfully uploaded 😀..", {
                     position: "top-right",
                     autoClose: 2000,

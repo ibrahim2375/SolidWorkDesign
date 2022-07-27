@@ -11,7 +11,7 @@ function SinglePost() {
     const [post, setpost] = useState([]);
     useEffect(() => {
         const getPost = async () => {
-            await Axios.get(`http://localhost:5000/post/${params.id}`).then((res) => {
+            await Axios.get(`${process.env.REACT_APP_SINGLE_POST_APP}${params.id}`).then((res) => {
                 setpost(res.data);
             }).catch((e) => {
                 console.log(e.message);
@@ -19,7 +19,7 @@ function SinglePost() {
         }
         getPost();
     }, [params]);
-    return(
+    return (
         <div className="single-post">
             <div className="container">
                 <Nav />
@@ -28,7 +28,7 @@ function SinglePost() {
                 <SinglePostStyle company={post.company} title={post.title} email={post.email} website={post.website} description={post.description} img={post.img} />
             </div>
         </div>
-    ) 
+    )
 }
 
 

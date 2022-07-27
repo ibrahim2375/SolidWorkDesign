@@ -23,7 +23,7 @@ function WorksPosts() {
 
     useEffect(() => {
         const getPosts = async () => {
-            await Axios.get('http://localhost:5000/posts').then((res) => {
+            await Axios.get(process.env.REACT_APP_GET_POSTS).then((res) => {
                 setposts(res.data);
             })
         }

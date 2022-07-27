@@ -13,7 +13,7 @@ function Register() {
     const [Errors, setErrors] = useState('');
     const SignUp = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:5000/register', {
+        axios.post(process.env.REACT_APP_REGISTER_TO_APP, {
             name: name,
             email: email,
             password: password

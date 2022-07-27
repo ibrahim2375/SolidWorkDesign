@@ -70,7 +70,7 @@ function App() {
     axios.defaults.withCredentials = true;
     ///////get user data
     const getUser = async () => {
-        await axios.get('http://localhost:5000/loggedIn').then((response) => {
+        await axios.get(process.env.REACT_APP_LOGIN_TO_APP).then((response) => {
             setuserData(response.data);
         }).catch((error) => {
             console.log(error.message);

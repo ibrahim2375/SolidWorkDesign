@@ -15,7 +15,7 @@ function ManagePosts() {
     const [postsState, setpostsState] = useState(true);
 
     const getMyPosts = () => {
-        axios.get('http://localhost:5000/my-posts').then((response) => {
+        axios.get(process.env.REACT_APP_GET_MY_POST).then((response) => {
             if (response.data.msg === undefined) {
                 setmyPosts(response.data);
                 setpostsState(true);
@@ -62,7 +62,7 @@ function ManagePosts() {
 }
 const MyPosts = ({ title, company, description, lastUpdate, id }) => {
     const deletePost = (id) => {
-        axios.delete(`http://localhost:5000/delete/${id}`).then((response) => {
+        axios.delete(`${process.env.REACT_APP_DELETE_POST}${id}`).then((response) => {
             console.log(response.data);
         }).catch((error) => {
             console.log(error);
