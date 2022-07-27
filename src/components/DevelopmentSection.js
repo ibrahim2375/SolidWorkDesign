@@ -24,12 +24,11 @@ function DevelopmentSection({ Image }) {
             </div>
             <div className="text-content">
                 <div className="txt">
-                    <h4>Lorem, ipsum dolor sit amet </h4>
+                    <h4>We use research, strategy and design to innovate </h4>
                     <p>
-                        numquam pariatur architecto magni
-                        commodi ipsam fugit cupiditate debitis
-                        reprehenderit quod, ad accusamus dolores
-                        consequatur consequaturconsequatur.</p>
+                        solve complex problems.Our team of thinkers and doers create
+                        digital products and campaigns to drive real performance
+                        and commercial value..</p>
                 </div>
             </div>
 

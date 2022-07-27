@@ -4,11 +4,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //components
 import Home from '../Home'
 import Works from '../Works'
+import EditPosts from '../EditPosts'
 import CreatePost from '../CreatePost'
 import ManagePosts from '../ManagePosts'
 import SinglePost from '../components/SinglePost'
 import Login from '../components/Login/Login'
 import Register from '../components/Register/Register'
+
 //import to protect router
 import ProtectForLoginAndRegister from './ProtectForLoginAndRegister'
 import ProtectForUserPages from './ProtectForUserPages'
@@ -39,6 +41,13 @@ function RouterComponent({ mainColor, spanState, stateOFthemeChange, classAnimat
                         </ProtectForUserPages>
                     }>
                     </Route>
+                    <Route exact path='/works/edit/:id' element={
+                        <ProtectForUserPages IsloggedIn={userState} >
+                            <EditPosts />
+                        </ProtectForUserPages>
+                    }>
+                    </Route>
+
                     <Route exact path='/works/:id' element={<SinglePost />}>
                     </Route>
                     <Route path='/login' element={

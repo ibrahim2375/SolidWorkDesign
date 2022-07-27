@@ -11,14 +11,14 @@ function Footer() {
             <div className="footer-content container">
                 <div className="first">
                     <span>Egypt</span>
-                    <p className="text-center display-6" >The Elbow Rooms,
-                        64 Call Lane,
-                        Leeds, LS1 6DT</p>
+                    <p className="text-center display-6" >The hosry Rooms,
+                        october ,
+                        giza, LS1 6DT</p>
                 </div>
                 <div className="second">
                     <span>Egypt</span>
-                    <p className="text-center display-6">3rd Floor, 6 Duke Street
-                        London, W1U 3EN</p>
+                    <p className="text-center display-6">3rd Floor,  abdelmnam riad Street
+                        cairo, W1U 3EN</p>
                 </div>
                 <div className="third">
                     <p className="text-center display-6">email@gmail.com</p>
