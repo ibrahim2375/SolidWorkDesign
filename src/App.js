@@ -81,8 +81,20 @@ function App() {
     useEffect(() => {
         getUser();
     }, [])
+
+    ////////////loader//////////
+    window.addEventListener('load', () => {
+        let loader = document.getElementById('loader');
+        loader.style.display = 'none';
+    })
+    ////////////loader//////////
     return (
         <div className="App">
+            <div className="loader" id="loader">
+                <div className="one"></div>
+                <div className="two"></div>
+                <div className="three"></div>
+            </div>
             <RouterComponent mainColor={mainColor} spanState={spanState} stateOFthemeChange={stateOFthemeChange} classAnimation={classAnimation} userData={userData} />
         </div>
     );

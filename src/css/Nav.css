@@ -43,6 +43,9 @@
     right: 0px;
     gap: 20px;
 }
+.navBar .nav-right .name-label {
+    color: var(--bg-color);
+}
 .navBar .btn-contact{
     position: relative;
     text-decoration: none;
@@ -138,6 +141,9 @@
             position: relative;
             flex-direction: column;
 
+        }
+        .navBar .nav-right .name-label {
+            color: white;
         }
         .navBar .btn-contact {
             color:white;

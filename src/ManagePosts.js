@@ -30,7 +30,7 @@ function ManagePosts() {
     }
     useEffect(() => {
         getMyPosts();
-    })
+    }, [])
     return (
         <div className="container">
             <Nav />
@@ -61,9 +61,10 @@ function ManagePosts() {
     )
 }
 const MyPosts = ({ title, company, description, lastUpdate, id }) => {
-    const deletePost = (id) => {
-        axios.delete(`${process.env.REACT_APP_DELETE_POST}${id}`).then((response) => {
+    const deletePost = async (id) => {
+        await axios.delete(`${process.env.REACT_APP_DELETE_POST}${id}`).then((response) => {
             console.log(response.data);
+            window.location.reload();
         }).catch((error) => {
             console.log(error);
         })

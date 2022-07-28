@@ -10,9 +10,10 @@ import { Context } from './Router/Router';
 
 function Home() {
     const { stateOFthemeChange } = useContext(Context);
-
+ 
     return (
         <>
+
             <header >
                 <div className="container">
                     <Nav />

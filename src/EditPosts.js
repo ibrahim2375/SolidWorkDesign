@@ -87,7 +87,7 @@ const Form = () => {
     }, []);
     return (
         <form encType="multipart/form-data">
-            <h1 className="text-center ">Update Your Post</h1>
+            <h1 className="text-center pt-5 ">Update Your Post</h1>
             <p className={`${Errors === 'success' ? 'text-success' : 'text-danger'}`}>{Errors}</p>
             {/* img */}
             <div className="mb-3">

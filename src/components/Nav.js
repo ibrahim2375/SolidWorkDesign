@@ -97,14 +97,14 @@ function Nav() {
             </div>
             <nav style={{ display: navState }} className="navBar">
                 <ul >
-                    <li><a className='link' href="/" >Home</a></li>
-                    <li><a className='link' href="/works" >Works</a></li>
-                    <li><a className='link' href="/about" >About</a></li>
+                    <li><Link className='link' to="/" >Home</Link></li>
+                    <li><Link className='link' to="/works" >Works</Link></li>
+                    <li><Link className='link' to="/about" >About</Link></li>
                     {
                         userState === true ? (
                             <>
-                                <li><a className='link' href="/works/create" >CreatePost</a></li>
-                                <li><a className='link' href="/works/manage" >My Posts</a></li>
+                                <li><Link className='link' to="/works/create" >CreatePost</Link></li>
+                                <li><Link className='link' to="/works/manage" >My Posts</Link></li>
                             </>
                         ) : null
                     }
@@ -114,10 +114,10 @@ function Nav() {
                     {
                         userState === true ? (
                             <>
-                                <h5 className="text-center mb-0" style={{ color: "#8b5cdd" }}>{UserName ?? null}</h5>
-                                <button className="btn-contact" style={{ color: "" }} onClick={logOut}>LogOut</button>
+                                <h5 className="text-center mb-0 name-label" >{UserName ?? null}</h5>
+                                <button className="btn-contact" onClick={logOut}>LogOut</button>
                             </>
-                        ) : <Link to="/login" className="btn-contact" style={{ color: "" }}>LogIn</Link>
+                        ) : <Link to="/login" className="btn-contact" >LogIn</Link>
                     }
                 </div>
                 <div className="shape-style1"></div>
