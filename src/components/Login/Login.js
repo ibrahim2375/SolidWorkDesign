@@ -27,11 +27,7 @@ function Login() {
                     autoClose: 1000,
                 });
                 setErrors('');
-                // window.location.reload();
-                // window.location.pathname = '/';
                 window.location.href = '/';
-
-
             } else {
                 setErrors(response.data);
 

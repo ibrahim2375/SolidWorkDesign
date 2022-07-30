@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import Axios from 'axios';
+import React, { useState } from 'react'
+//redux
+import { useSelector } from 'react-redux'
 //components
 import Pagination from '../pagination/pagination'
 //css import
@@ -7,28 +8,18 @@ import '../css/WorksPosts.css'
 //icons  
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 function WorksPosts() {
-    const [posts, setposts] = useState([]);
+    const posts_reducer = useSelector((state) => state.posts_reducer.posts);
     //create pagination need some variables first
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(6);
-
     const lastIndexOfPage = currentPage * postsPerPage;
     const firstIndexOfPage = lastIndexOfPage - postsPerPage;
-    const currentPosts = posts.slice(firstIndexOfPage, lastIndexOfPage);
+    const currentPosts = posts_reducer.slice(firstIndexOfPage, lastIndexOfPage);
 
     //change page number
     const paginate = (number) => {
         setCurrentPage(number);
     }
-
-    useEffect(() => {
-        const getPosts = async () => {
-            await Axios.get(process.env.REACT_APP_GET_POSTS).then((res) => {
-                setposts(res.data);
-            })
-        }
-        getPosts();
-    }, [])
     return (
         <div className="WorksPosts">
             <div className="circle-shape"></div>
@@ -44,8 +35,8 @@ function WorksPosts() {
                 {/* single post */}
 
             </div>
-            <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} />
             {/* pagination pages */}
+            <Pagination postsPerPage={postsPerPage} totalPosts={posts_reducer.length} paginate={paginate} />
             {/* pagination pages */}
         </div>
     )

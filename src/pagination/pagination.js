@@ -8,7 +8,7 @@ function pagination({ postsPerPage, totalPosts, paginate }) {
     return (
         <div className="container  paginator" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'row', flexWrap: 'wrap' }}>
             <div aria-label="Page navigation example  ">
-                <ul className="pagination " style={{ overflow: 'auto' }}>
+                <ul className="pagination  w-100" style={{ overflow: 'auto' }}>
                     {
                         numArray.map((number, index) => {
                             return <li key={index} className="page-link" onClick={() => paginate(number)} style={{ color: '#8b5cdd', cursor: 'pointer' }}><a href={`#page=${number}`}>{number}</a></li>

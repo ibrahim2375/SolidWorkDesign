@@ -2,7 +2,6 @@ import React from 'react';
 //css 
 import '../css/Sections.css'
 function Sections({ img, description, title, fadeAnimation }) {
-
     return (
         <section>
             <div className="content">

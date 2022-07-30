@@ -1,5 +1,4 @@
-@import url('./normalization.css');
-@import url('./variables.css');
+
 @import url('./revealAnimation.css');
 section {
     height :100vh;
@@ -17,7 +16,6 @@ section .content {
 }
 section .content .image {
     width: 80%;
-    /* background-color:aqua; */
     overflow: hidden;
 }
 section .content  img {
@@ -102,7 +100,8 @@ section {
 
     section .content .section-data {
         left: 0%;
-        padding: 40px;
+        /* padding: 40px; */
+        width:100%;
     }
 
 }

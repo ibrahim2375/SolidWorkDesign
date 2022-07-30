@@ -1,22 +1,20 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
+//Redux
+import { useSelector } from 'react-redux'
 //css
 import '../css/Nav.css'
 import axios from 'axios'
 //icons 
 import SortIcon from '@mui/icons-material/Sort';
 import CloseIcon from '@mui/icons-material/Close';
-//context  
-import { Context } from '../Router/Router';
 //links 
 import { Link } from 'react-router-dom'
 function Nav() {
+    ///user
+    const user_data = useSelector(state => state.user_reducer);
     const [Icon, setIcon] = useState(SortIcon);
     const [IconColor, setIconColor] = useState('#8b5cdd');
     const [navState, setNavState] = useState('none');
-    // const [navColor, setNavColor] = useState('black');
-    const [userState, setuserState] = useState(false);
-    const [UserName, setUserName] = useState('');
-    const { userData } = useContext(Context);
     const toggleNav = () => {
         if (navState === 'none') {
             setNavState('flex');
@@ -35,8 +33,6 @@ function Nav() {
             setNavState('flex');
             setIcon(CloseIcon);
             setIconColor('white');
-            // setNavColor('balck');
-
         }
         //resizeing
         window.addEventListener('resize', () => {
@@ -58,38 +54,18 @@ function Nav() {
                 setIconColor('#8b5cdd');
             }
         })
-        // if(window.innerWidth <= 768){
-        //     if (window.location.pathname === '/') {
-        //         setNavColor('white');
-        //     }
-        // }
-        // if (window.location.pathname === '/' || window.innerWidth <= 768) {
-        //     setNavColor('white');
-        // }
-
     }
     const logOut = async () => {
         await axios.delete(process.env.REACT_APP_LOGOUT_FROM_APP).then((res) => {
             console.log(res.data)
-            // window.location.reload();
-            window.location.href = '/';
+            // window.location.href = '/';
         }).catch((err) => console.log(err.message));
     }
-    const getdata = () => {
-        if (userData.loggedIn === true) {
-            setuserState(true);
-            setUserName(userData.user.name);
-        } else {
-            setuserState(false);
-            setUserName('');
-        }
-    }
+
     useEffect(() => {
         handelNav()
     }, [])
-    useEffect(() => {
-        getdata();
-    })
+
     return (
         <>
             <div className="list-bar" onClick={toggleNav}>
@@ -101,7 +77,7 @@ function Nav() {
                     <li><Link className='link' to="/works" >Works</Link></li>
                     <li><Link className='link' to="/about" >About</Link></li>
                     {
-                        userState === true ? (
+                        user_data.user_state === true ? (
                             <>
                                 <li><Link className='link' to="/works/create" >CreatePost</Link></li>
                                 <li><Link className='link' to="/works/manage" >My Posts</Link></li>
@@ -112,9 +88,9 @@ function Nav() {
                 </ul>
                 <div className="nav-right">
                     {
-                        userState === true ? (
+                        user_data.user_state === true ? (
                             <>
-                                <h5 className="text-center mb-0 name-label" >{UserName ?? null}</h5>
+                                <h5 className="text-center mb-0 name-label" >{user_data.current_user.name ?? null}</h5>
                                 <button className="btn-contact" onClick={logOut}>LogOut</button>
                             </>
                         ) : <Link to="/login" className="btn-contact" >LogIn</Link>

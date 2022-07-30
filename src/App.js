@@ -1,23 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios'
+import React, { useState } from 'react';
+//redux
+import { Provider } from 'react-redux'
+import store from './Redux/store'
 //packages bootstarp
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 //components
-
 import RouterComponent from './Router/Router'
 //css
 import './css/App.css';
-
 function App() {
     // themes and animations variables
     const [classAnimation, setclassAnimation] = useState('');
     const [mainColor, setmainColor] = useState('white');
     const [stateOFthemeChange, setstateOFthemeChange] = useState(false);
     const [spanState, setspanState] = useState(false);
-    //////////////
-    const [userData, setuserData] = useState([]);
-    axios.defaults.withCredentials = true;
     const changeColors = () => {
         const sidebareComponentAbove = document.querySelectorAll('.color-of-sidebar-change');
         for (let i = 0; i < sidebareComponentAbove.length; i++) {
@@ -63,40 +60,25 @@ function App() {
         fadeIn();
         changeColors();
     });
-    ///////////////////////////////////////////////////////
-    //   USER   //
-    ////////////////////////////////////////////////////
-    //axios connection for cookies on  between it and the server
-    axios.defaults.withCredentials = true;
-    ///////get user data
-    const getUser = async () => {
-        await axios.get(process.env.REACT_APP_LOGIN_TO_APP).then((response) => {
-            setuserData(response.data);
-        }).catch((error) => {
-            console.log(error.message);
-        })
-    }
-    // getUser();
 
-    useEffect(() => {
-        getUser();
-    }, [])
 
     ////////////loader//////////
-    window.addEventListener('load', () => {
-        let loader = document.getElementById('loader');
-        loader.style.display = 'none';
-    })
+    // window.addEventListener('load', () => {
+    //     let loader = document.getElementById('loader');
+    //     loader.style.display = 'none';
+    // })
     ////////////loader//////////
     return (
-        <div className="App">
-            <div className="loader" id="loader">
-                <div className="one"></div>
-                <div className="two"></div>
-                <div className="three"></div>
+        <Provider store={store}>
+            <div className="App">
+                {/* <div className="loader" id="loader">
+                    <div className="one"></div>
+                    <div className="two"></div>
+                    <div className="three"></div>
+                </div> */}
+                <RouterComponent mainColor={mainColor} spanState={spanState} stateOFthemeChange={stateOFthemeChange} classAnimation={classAnimation} />
             </div>
-            <RouterComponent mainColor={mainColor} spanState={spanState} stateOFthemeChange={stateOFthemeChange} classAnimation={classAnimation} userData={userData} />
-        </div>
+        </Provider>
     );
 }
 

@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+//redux
+import { useDispatch, useSelector } from 'react-redux'
+import { get_user_posts } from './Redux/actions/Actions'
 //icons 
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
@@ -11,17 +14,16 @@ import { Link } from 'react-router-dom'
 //css 
 import './css/ManagePosts.css'
 function ManagePosts() {
-    const [myPosts, setmyPosts] = useState([]);
     const [postsState, setpostsState] = useState(true);
-
-    const getMyPosts = () => {
-        axios.get(process.env.REACT_APP_GET_MY_POST).then((response) => {
+    const dispatch = useDispatch();
+    const userPosts = useSelector(state => state.user_reducer.user_posts);
+    const getMyPosts = async () => {
+        await axios.get(process.env.REACT_APP_GET_MY_POST).then((response) => {
             if (response.data.msg === undefined) {
-                setmyPosts(response.data);
+                dispatch(get_user_posts(response.data));
                 setpostsState(true);
             } else {
                 setpostsState(false);
-                // console.log(response.data.msg);
             }
         }).catch((err) => {
             console.log(err.message);
@@ -30,7 +32,7 @@ function ManagePosts() {
     }
     useEffect(() => {
         getMyPosts();
-    }, [])
+    })
     return (
         <div className="container">
             <Nav />
@@ -38,14 +40,12 @@ function ManagePosts() {
             <Links />
             {/* my posts */}
             <div className="my-posts container d-flex align-items-center justify-content-center flex-column gap-3 my-5 my-lg-0 my-md-0">
-                {/* message for user not have any post */}
                 {
                     postsState === true ? null : <MessageForNewUser />
                 }
-                {/* message for user not have any post */}
                 {/* /////////////////// */}
                 {
-                    myPosts.map((posts, index) => {
+                    userPosts.map((posts) => {
                         return (
                             <MyPosts key={posts.id} title={posts.title} description={posts.description} company={posts.company} lastUpdate={posts.updatedAt} id={posts.id} />
                         )
@@ -56,8 +56,6 @@ function ManagePosts() {
 
             {/* my posts */}
         </div>
-
-
     )
 }
 const MyPosts = ({ title, company, description, lastUpdate, id }) => {
