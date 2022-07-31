@@ -28,9 +28,10 @@ function WorksPosts() {
             <div className="posts mb-5">
                 {/* single post */}
                 {
-                    currentPosts.map(post => {
-                        return <Post key={post.id} title={post.title} description={post.description} img={post.img} company={post.company} id={post.id} />
-                    })
+                    currentPosts.length > 0 ?
+                        currentPosts.map(posts => {
+                            return <Post key={posts.id} title={posts.title} description={posts.description} img={posts.img} company={posts.company} id={posts.id} />
+                        }) : <h1>Not Founded 😞</h1>
                 }
                 {/* single post */}
 
