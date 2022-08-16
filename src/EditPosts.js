@@ -7,9 +7,10 @@ import Nav from './components/Nav'
 import SideBar from './components/SideBar'
 //css  
 import './css/Create.css';
-import { ToastContainer, toast } from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
 // Import toastify css file
 import 'react-toastify/dist/ReactToastify.css';
+import * as PostsManageApi from './utils/PostsManage'
 function EditPosts() {
     return (
         <div className="create">
@@ -51,19 +52,7 @@ const Form = () => {
         formdata.append('company', company);
         formdata.append('id', param.id);
         if (title != null && description != null && email != null && website != null && company != null && img != null) {
-            axios.put(process.env.REACT_APP_UPDATE_WORK, formdata).then((response) => {
-                toast(`${response.data}`, {
-                    position: "top-right",
-                    autoClose: 2000,
-                });
-                setErrors('success');
-            }).catch((error) => {
-                toast("somthing error 😒", {
-                    position: "top-right",
-                    autoClose: 2000,
-                });
-                console.log(error);
-            })
+            PostsManageApi.update(formdata);
         } else {
             setErrors('can not be updated');
         }

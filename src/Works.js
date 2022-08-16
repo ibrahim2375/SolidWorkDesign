@@ -8,8 +8,6 @@ import WorksPosts from './components/WorksPosts'
 //redux
 import { useDispatch } from 'react-redux'
 import { get_Posts } from './Redux/actions/Actions'
-//icons 
-// import SearchIcon from '@mui/icons-material/Search';
 function Works() {
 
     return (

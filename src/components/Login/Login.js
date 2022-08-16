@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import '../../css/Login/Login.css';
 import CloseIcon from '@mui/icons-material/Close';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify'
 // Import toastify css file
 import 'react-toastify/dist/ReactToastify.css';
@@ -27,7 +27,8 @@ function Login() {
                     autoClose: 1000,
                 });
                 setErrors('');
-                window.location.href = '/';
+                // window.location.href = '/';
+                Navigate('/');
             } else {
                 setErrors(response.data);
 

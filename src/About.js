@@ -9,7 +9,6 @@ import Links from './components/Links'
 import Img1 from './images/about1.jpg'
 import Img2 from './images/about2.jpg'
 import Img3 from './images/about3.jpg'
-// import ImgTeam from './images/teamimg.png'
 //css 
 import './css/About/About.css'
 function About() {
@@ -82,25 +81,11 @@ function About() {
                         <img src={Img3} alt="" />
                     </div>
                 </div>
-                {/* section */}
-                {/* team section */}
-                {/* <div className={`about-main-content-section`}>
-                    <div className="about-main-content-section-details">
-                        <h1 className="display-3 fw-bold">Meet the team.</h1>
-                        <p className="text-muted ">Trust us to deliver a transformative
-                            user experience married with technical
-                            excellence across a broad range of projects and industry sectors.</p>
-                    </div>
-                    <div className="about-main-content-section-img team-img ">
-                        <img src={ImgTeam} alt="" />
-                    </div>
-                </div> */}
-                {/* team section */}
+              
             </div>
             <Footer />
 
         </div>
     )
 }
-// const  SectionAboutPage = ()=> {} 
 export default About

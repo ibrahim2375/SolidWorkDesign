@@ -41,8 +41,6 @@ function App() {
             }
         }
     }
-    //add fade In animation to some components sended through context     
-    //end change theme
     const fadeIn = () => {
         const reveal = document.querySelectorAll('.reveal');
         for (let i = 0; i < reveal.length; i++) {
@@ -62,20 +60,10 @@ function App() {
     });
 
 
-    ////////////loader//////////
-    // window.addEventListener('load', () => {
-    //     let loader = document.getElementById('loader');
-    //     loader.style.display = 'none';
-    // })
-    ////////////loader//////////
+  
     return (
         <Provider store={store}>
             <div className="App">
-                {/* <div className="loader" id="loader">
-                    <div className="one"></div>
-                    <div className="two"></div>
-                    <div className="three"></div>
-                </div> */}
                 <RouterComponent mainColor={mainColor} spanState={spanState} stateOFthemeChange={stateOFthemeChange} classAnimation={classAnimation} />
             </div>
         </Provider>

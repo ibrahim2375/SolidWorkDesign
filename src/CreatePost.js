@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
-import axios from 'axios'
+// import axios from 'axios'
 //components
 import Links from './components/Links'
 import Nav from './components/Nav'
 import SideBar from './components/SideBar'
 //css  
 import './css/Create.css';
-import { ToastContainer, toast } from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
 // Import toastify css file
 import 'react-toastify/dist/ReactToastify.css';
+import * as PostsManageApi from './utils/PostsManage'
 
 function CreatePost() {
     return (
@@ -50,24 +51,13 @@ const Form = () => {
         formdata.append('company', company);
         if (title != null && description != null && email != null && website != null && company != null && img != null) {
             setErrors('success');
-            axios.post(process.env.REACT_APP_CREATE_WORK, formdata).then((response) => {
-                toast("successfully uploaded 😀..", {
-                    position: "top-right",
-                    autoClose: 2000,
-                });
-                setitle('');
-                setcompany('');
-                setemail('');
-                setdescription('');
-                setimg('');
-                setwebsite('');
-                // console.log('good')
-            }).catch((error) => {
-                toast("somthing error 😒", {
-                    position: "top-right",
-                    autoClose: 2000,
-                });
-            })
+            PostsManageApi.create(formdata);
+            setitle('');
+            setcompany('');
+            setemail('');
+            setdescription('');
+            setimg('');
+            setwebsite('');
         } else {
             setErrors('can not be empty');
         }

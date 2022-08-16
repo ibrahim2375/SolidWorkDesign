@@ -15,12 +15,10 @@ import ManagePosts from '../ManagePosts'
 import SinglePost from '../components/SinglePost'
 import Login from '../components/Login/Login'
 import Register from '../components/Register/Register'
-
 //import to protect router
 import ProtectForLoginAndRegister from './ProtectForLoginAndRegister'
 import ProtectForUserPages from './ProtectForUserPages'
 export const Context = createContext();
-
 function RouterComponent({ mainColor, spanState, stateOFthemeChange, classAnimation }) {
     //dispatch
     const dispatch = useDispatch();

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+// import axios from 'axios'
 //redux
-import { useDispatch, useSelector } from 'react-redux'
-import { get_user_posts } from './Redux/actions/Actions'
+import { useSelector } from 'react-redux'
 //icons 
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
@@ -13,26 +12,13 @@ import SideBar from './components/SideBar'
 import { Link } from 'react-router-dom'
 //css 
 import './css/ManagePosts.css'
+import * as PostsManageApi from './utils/PostsManage'
 function ManagePosts() {
-    const [postsState, setpostsState] = useState(true);
-    const dispatch = useDispatch();
+    const [postsState] = useState(true);
     const userPosts = useSelector(state => state.user_reducer.user_posts);
-    const getMyPosts = async () => {
-        await axios.get(process.env.REACT_APP_GET_MY_POST).then((response) => {
-            if (response.data.msg === undefined) {
-                dispatch(get_user_posts(response.data));
-                setpostsState(true);
-            } else {
-                setpostsState(false);
-            }
-        }).catch((err) => {
-            console.log(err.message);
-            alert('Error: ' + err.message);
-        })
-    }
     useEffect(() => {
-        getMyPosts();
-    })
+        PostsManageApi.getMyPosts();
+    },[])
     return (
         <div className="container">
             <Nav />
@@ -59,14 +45,7 @@ function ManagePosts() {
     )
 }
 const MyPosts = ({ title, company, description, lastUpdate, id }) => {
-    const deletePost = async (id) => {
-        await axios.delete(`${process.env.REACT_APP_DELETE_POST}${id}`).then((response) => {
-            console.log(response.data);
-            window.location.reload();
-        }).catch((error) => {
-            console.log(error);
-        })
-    }
+ 
     return (
         <div className="card text-center w-100 my-3 my-lg-0 my-md-0">
             <div className="card-header data-head-footer fs-3 fw-bold">{title}</div>
@@ -74,7 +53,7 @@ const MyPosts = ({ title, company, description, lastUpdate, id }) => {
                 <h5 className="card-title">{company}</h5>
                 <p className="card-text">{description}</p>
                 <div className="btns-data w-100 d-flex align-items-center justify-content-end flex-row gap-2 ">
-                    <button className="btn btn-outline-light" onClick={() => deletePost(id)}><DeleteForeverIcon className="icon-data-manage" /></button>
+                    <button className="btn btn-outline-light" onClick={() => PostsManageApi.deletePost(id)}><DeleteForeverIcon className="icon-data-manage" /></button>
                     <Link to={`/works/edit/${id}`} className="btn  btn-outline-light"><ModeEditIcon className="icon-data-manage" /></Link>
                 </div>
             </div>
